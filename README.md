@@ -27,8 +27,8 @@ You need to make sure FusionAuth is running and that you have python3/pip3 avail
 * `pip3 install pkce`
 * `pip3 install requests`
 * create an application in FusionAuth:
-  * Set the redirect url to `http://localhost:5000/callback`
-  * Set the logout url to `http://localhost:5000`
+  * Set the redirect url to `http://localhost:5001/callback`
+  * Set the logout url to `http://localhost:5001`
   * Follow form creation as documented here: https://fusionauth.io/blog/2020/08/27/advanced-registration-form and note the form id
   * Create an API key
 * `cp samplesettings.py settings.py`
@@ -37,9 +37,9 @@ You need to make sure FusionAuth is running and that you have python3/pip3 avail
 ## Running 
 To run this:
 
-`OAUTHLIB_INSECURE_TRANSPORT=1 FLASK_APP=oauth.py python3 -m flask run`
+`OAUTHLIB_INSECURE_TRANSPORT=1 FLASK_ENV=development FLASK_APP=oauth.py python3 -m flask run --port=5001 --debugger --reload`
 
-Visit the application at http://localhost:5000
+Visit the application at http://localhost:5001
 
 ## To leave venv
 
